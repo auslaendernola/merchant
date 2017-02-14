@@ -8,8 +8,14 @@
     <%= f.input :description %>
     <%= f.association :brand %>
     <%= f.association :category %>
+    <%= f.input :avatar, as: :file %>
   </div>
 
+  <p>
+    <% if @product.avatar.exists? %>
+      <%= image_tag @product.avatar.url(:thumb) %>
+    <% end %>
+  </p>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
