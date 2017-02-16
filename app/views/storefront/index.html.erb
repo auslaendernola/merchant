@@ -1,8 +1,12 @@
-<h1>Bienvenidos a la Tienda Magnifica</h1>
-<p>
+<h1 class="text-center">Bienvenidos a la Tienda Magnifica</h1>
+<p class="text-center">
   Esa tienda va cargarte el doble para todo!
 </p>
-
+<% if params[:cat_id] %>
+  <h3>All <%= @category.name.capitalize %></h3>
+<% else %>
+  <h3>All Products</h3>
+<% end %>
 <div class="row">
   <% @products.each do |product| %>
   <div class="col-sm-4">
