@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carts/edit'
+
   get '/shop' => 'storefront#index'
 
   get '/about' => 'storefront#about'
@@ -9,6 +11,9 @@ Rails.application.routes.draw do
     resources :brands
     resources :categories
   end
+
+  resource :cart, only: [:edit, :update, :destroy]
+  resources :line_items, only: [:create]
 
   root 'storefront#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
