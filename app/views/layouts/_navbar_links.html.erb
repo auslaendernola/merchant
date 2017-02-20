@@ -43,6 +43,9 @@
     </div>
     <%= submit_tag("Search", class: "btn btn-default btn-sm") %>
   <% end %>
+  <li>
+    <%= link_to fa_icon("shopping-cart", text: "View Cart"), edit_cart_path %>
+  </li>
   <% if user_signed_in? %>
     <!-- Account -->
     <li>
