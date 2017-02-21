@@ -1,0 +1,15 @@
+<%= simple_form_for(@order) do |f| %>
+<!-- Show any errors -->
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: "Mdm Toutlemonde" %>
+    <%= f.input :address, placeholder: "100 Canal Street \n New Orleans, Louisiana" %>
+    <%= f.input :pay_type, collection: Order::PAYMENT_TYPES, prompt: "Select a payment Method" %>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="form-actions">
+    <%= f.submit "Place Order", class: "btn btn-success btn-md"%>
+    <br>
+  </div>
+<% end %>
